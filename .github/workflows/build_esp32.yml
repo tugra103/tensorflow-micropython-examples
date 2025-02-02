@@ -37,27 +37,13 @@ jobs:
           cd tflm_esp_kernels
           git submodule update --init components/esp32-camera
           git submodule update --init components/esp-nn
-      - name: Get Cache Keys
-        # later get this like this: git ls-remote --heads https://github.com/espressif/esp-idf
-        # this commit is hard-coded in micropython/tools/ci.sh
-        run: |
-          IDF_COMMIT=142bb32c50fa9875b8b69fa539a2d59559460d72
-          echo "esp-idf-commit=$IDF_COMMIT" >> $GITHUB_ENV
-          TFLM_COMMIT=$(git submodule status tensorflow | awk '{print ($1)}')
-          echo "tflm-commit=$TFLM_COMMIT" >> $GITHUB_ENV
-      #      - name: Cache esp-idf
-      #        id: cache-esp-idf
-      #        uses: actions/cache@v2
-      #        env:
-      #          cache-name: cache-esp-idf
-      #        with:
-      #          path: ./esp-idf
-      #          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ env.esp-idf-commit }}
       - name: Setup Build for Tensorflow
 #        if: steps.cache-tflm.outputs.cache-hit != 'true'
         run: |
           pip3 install Pillow
           pip3 install Wave
+        
+          pwd
 
           echo "Regenerating microlite/tfm directory"
           rm -rf ./micropython-modules/microlite/tflm
