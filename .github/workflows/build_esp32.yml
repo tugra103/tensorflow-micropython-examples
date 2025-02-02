@@ -16,16 +16,17 @@ jobs:
     container:
       image: espressif/idf:release-v4.3
     steps:
+      - name: install node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18  
       - name: setup
         run: |
           apt update
           apt install git
           git config --global --add safe.directory /__w/tensorflow-micropython-examples/tensorflow-micropython-examples
       - name: install node
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 18  
-      - name: Checkout repository
+     - name: Checkout repository
         uses: actions/checkout@v2
       - name: Prepare to Build Tensorflow Micropython Firmware for ESP32
         run: |
