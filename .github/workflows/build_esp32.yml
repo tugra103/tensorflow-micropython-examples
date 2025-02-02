@@ -23,6 +23,8 @@ jobs:
       - name: setup
         run: |
           apt update
+          apt remove -y nodejs
+          apt remove -y nvm.sh
           apt install git
           git config --global --add safe.directory /__w/tensorflow-micropython-examples/tensorflow-micropython-examples
       - name: Checkout repository
