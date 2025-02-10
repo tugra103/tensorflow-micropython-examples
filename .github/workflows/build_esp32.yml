@@ -19,6 +19,17 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+#  MICROLITE /
+#  MICROLITE_C3
+#  MICROLITE_S2_SPIRAM
+#  MICROLITE_S3
+#  MICROLITE_S3_SPIRAM
+#  MICROLITE_S3_SPIRAM_CS_GPIO_20
+#  MICROLITE_S3_SPIRAM_OCTAL
+#  MICROLITE_SPIRAM
+#  MICROLITE_SPIRAM_16M /
+#  MICROLITE_SPIRAM_CAM
+
       - name: Build ESP32-MICROLITE No SPIRAM - 4MB Flash
         run: |
           mv * ..
@@ -39,66 +50,158 @@ jobs:
           name: microlite-esp32-firmware
           path: /home/runner/work/tensorflow-micropython-examples/dependencies/micropython/ports/esp32/build-MICROLITE/firmware.bin
 
-      # - name: Build with psram support and 16MB Flash firmware
-      #   run: |
-      #     source ./esp-idf/export.sh
+      - name: Build MICROLITE_C3 firmware
+        run: |
+          source ./dependencies/micropython/tools/ci.sh && ci_esp32_idf50_setup
+          echo "BUILDING MICROLITE_C3"
+          source ./scripts/build.sh && build_esp32 "MICROLITE_C3"
+          TARGET=$(pwd)/dependencies/micropython/ports/esp32
+          echo "TARGET=$TARGET"
+          ./scripts/assemble-unified-image-esp.sh $TARGET "MICROLITE_C3"
+          ls $TARGET/build-MICROLITE_C3
+        shell: bash
 
-      #     echo "cd ./boards/esp32/MICROLITE_SPIRAM_16M"
-      #     cd ./boards/esp32/MICROLITE_SPIRAM_16M
+      - name: Archive ESP32-MICROLITE_C3 firmware
+        uses: actions/upload-artifact@v4
+        with:
+          name: microlite-esp32-firmware
+          path: /home/runner/work/tensorflow-micropython-examples/dependencies/micropython/ports/esp32/build-MICROLITE_C3/firmware.bin
 
-      #     echo "Building MICROLITE_SPIRAM_16M"
-      #     rm -rf build
-      #     idf.py clean build
+      - name: Build MICROLITE_S2_SPIRAM firmware
+        run: |
+          source ./dependencies/micropython/tools/ci.sh && ci_esp32_idf50_setup
+          echo "BUILDING MICROLITE_S2_SPIRAM"
+          source ./scripts/build.sh && build_esp32 "MICROLITE_S2_SPIRAM"
+          TARGET=$(pwd)/dependencies/micropython/ports/esp32
+          echo "TARGET=$TARGET"
+          ./scripts/assemble-unified-image-esp.sh $TARGET "MICROLITE_S2_SPIRAM"
+          ls $TARGET/build-MICROLITE_S2_SPIRAM
+        shell: bash
 
-      #     ../../../micropython-modules/microlite/assemble-unified-image-esp.sh \
-      #     ../../../micropython/ports/esp32
+      - name: Archive ESP32-MICROLITE_S2_SPIRAM firmware
+        uses: actions/upload-artifact@v4
+        with:
+          name: microlite-esp32-firmware
+          path: /home/runner/work/tensorflow-micropython-examples/dependencies/micropython/ports/esp32/build-MICROLITE_S2_SPIRAM/firmware.bin
 
-      # - name: Archive ESP32-MICROLITE-SPIRAM-16M firmware
-      #   uses: actions/upload-artifact@v2
-      #   with:
-      #     name: microlite-spiram-16m-esp32-firmware
-      #     path: |
-      #       boards/esp32/MICROLITE_SPIRAM_16M/build/firmware.bin
+      - name: Build MICROLITE_S3 firmware
+        run: |
+          source ./dependencies/micropython/tools/ci.sh && ci_esp32_idf50_setup
+          echo "BUILDING MICROLITE_S3"
+          source ./scripts/build.sh && build_esp32 "MICROLITE_S3"
+          TARGET=$(pwd)/dependencies/micropython/ports/esp32
+          echo "TARGET=$TARGET"
+          ./scripts/assemble-unified-image-esp.sh $TARGET "MICROLITE_S3"
+          ls $TARGET/build-MICROLITE_S3
+        shell: bash
 
-      # - name: Build with psram support
-      #   run: |
-      #     source ./esp-idf/export.sh
+      - name: Archive ESP32-MICROLITE_S3 firmware
+        uses: actions/upload-artifact@v4
+        with:
+          name: microlite-esp32-firmware
+          path: /home/runner/work/tensorflow-micropython-examples/dependencies/micropython/ports/esp32/build-MICROLITE_S3/firmware.bin
 
-      #     echo "cd ./boards/esp32/MICROLITE_SPIRAM"
-      #     cd ./boards/esp32/MICROLITE_SPIRAM
+      - name: Build MICROLITE_S3_SPIRAM firmware
+        run: |
+          source ./dependencies/micropython/tools/ci.sh && ci_esp32_idf50_setup
+          echo "BUILDING MICROLITE_S3_SPIRAM"
+          source ./scripts/build.sh && build_esp32 "MICROLITE_S3_SPIRAM"
+          TARGET=$(pwd)/dependencies/micropython/ports/esp32
+          echo "TARGET=$TARGET"
+          ./scripts/assemble-unified-image-esp.sh $TARGET "MICROLITE_S3_SPIRAM"
+          ls $TARGET/build-MICROLITE_S3_SPIRAM
+        shell: bash
 
-      #     echo "Building MICROLITE_SPIRAM"
-      #     rm -rf build
-      #     idf.py clean build
+      - name: Archive ESP32-MICROLITE_S3_SPIRAM firmware
+        uses: actions/upload-artifact@v4
+        with:
+          name: microlite-esp32-firmware
+          path: /home/runner/work/tensorflow-micropython-examples/dependencies/micropython/ports/esp32/build-MICROLITE_S3_SPIRAM/firmware.bin
 
-      #     ../../../micropython-modules/microlite/assemble-unified-image-esp.sh \
-      #     ../../../micropython/ports/esp32
+      - name: Build MICROLITE_S3_SPIRAM_CS_GPIO_20 firmware
+        run: |
+          source ./dependencies/micropython/tools/ci.sh && ci_esp32_idf50_setup
+          echo "BUILDING MICROLITE_S3_SPIRAM_CS_GPIO_20"
+          source ./scripts/build.sh && build_esp32 "MICROLITE_S3_SPIRAM_CS_GPIO_20"
+          TARGET=$(pwd)/dependencies/micropython/ports/esp32
+          echo "TARGET=$TARGET"
+          ./scripts/assemble-unified-image-esp.sh $TARGET "MICROLITE_S3_SPIRAM_CS_GPIO_20"
+          ls $TARGET/build-MICROLITE_S3_SPIRAM_CS_GPIO_20
+        shell: bash
 
-      # - name: Archive ESP32-MICROLITE-SPIRAM firmware
-      #   uses: actions/upload-artifact@v2
-      #   with:
-      #     name: microlite-spiram-esp32-firmware
-      #     path: |
-      #       boards/esp32/MICROLITE_SPIRAM/build/firmware.bin
+      - name: Archive ESP32-MICROLITE_S3_SPIRAM_CS_GPIO_20 firmware
+        uses: actions/upload-artifact@v4
+        with:
+          name: microlite-esp32-firmware
+          path: /home/runner/work/tensorflow-micropython-examples/dependencies/micropython/ports/esp32/build-MICROLITE_S3_SPIRAM_CS_GPIO_20/firmware.bin
 
-      # - name: Build MICROLITE_SPIRAM_CAM
-      #   run: |
 
-      #     source ./esp-idf/export.sh
+      - name: Build MICROLITE_S3_SPIRAM_OCTAL firmware
+        run: |
+          source ./dependencies/micropython/tools/ci.sh && ci_esp32_idf50_setup
+          echo "BUILDING MICROLITE_S3_SPIRAM_OCTAL"
+          source ./scripts/build.sh && build_esp32 "MICROLITE_S3_SPIRAM_OCTAL"
+          TARGET=$(pwd)/dependencies/micropython/ports/esp32
+          echo "TARGET=$TARGET"
+          ./scripts/assemble-unified-image-esp.sh $TARGET "MICROLITE_S3_SPIRAM_OCTAL"
+          ls $TARGET/build-MICROLITE_S3_SPIRAM_OCTAL
+        shell: bash
 
-      #     echo "cd ./boards/esp32/MICROLITE_SPIRAM_CAM"
-      #     cd ./boards/esp32/MICROLITE_SPIRAM_CAM
+      - name: Archive ESP32-MICROLITE_S3_SPIRAM_OCTAL firmware
+        uses: actions/upload-artifact@v4
+        with:
+          name: microlite-esp32-firmware
+          path: /home/runner/work/tensorflow-micropython-examples/dependencies/micropython/ports/esp32/build-MICROLITE_S3_SPIRAM_OCTAL/firmware.bin
 
-      #     echo "Building MICROLITE_SPIRAM_CAM"
-      #     rm -rf builds
-      #     idf.py clean build
 
-      #     ../../../micropython-modules/microlite/assemble-unified-image-esp.sh \
-      #     ../../../micropython/ports/esp32
+      - name: Build MICROLITE_SPIRAM firmware
+        run: |
+          source ./dependencies/micropython/tools/ci.sh && ci_esp32_idf50_setup
+          echo "BUILDING MICROLITE_SPIRAM"
+          source ./scripts/build.sh && build_esp32 "MICROLITE_SPIRAM"
+          TARGET=$(pwd)/dependencies/micropython/ports/esp32
+          echo "TARGET=$TARGET"
+          ./scripts/assemble-unified-image-esp.sh $TARGET "MICROLITE_SPIRAM"
+          ls $TARGET/build-MICROLITE_SPIRAM
+        shell: bash
 
-      # - name: Archive ESP32-MICROLITE_SPIRAM_CAM firmware
-      #   uses: actions/upload-artifact@v2
-      #   with:
-      #     name: microlite-spiram-cam-esp32-firmware
-      #     path: |
-      #       boards/esp32/MICROLITE_SPIRAM_CAM/build/firmware.bin
+      - name: Archive ESP32-MICROLITE_SPIRAM firmware
+        uses: actions/upload-artifact@v4
+        with:
+          name: microlite-esp32-firmware
+          path: /home/runner/work/tensorflow-micropython-examples/dependencies/micropython/ports/esp32/build-MICROLITE_SPIRAM/firmware.bin
+
+
+      - name: Build with psram support and 16MB Flash firmware
+        run: |
+          source ./dependencies/micropython/tools/ci.sh && ci_esp32_idf50_setup
+          echo "BUILDING MICROLITE_SPIRAM_16M"
+          source ./scripts/build.sh && build_esp32 "MICROLITE_SPIRAM_16M"
+          TARGET=$(pwd)/dependencies/micropython/ports/esp32
+          echo "TARGET=$TARGET"
+          ./scripts/assemble-unified-image-esp.sh $TARGET "MICROLITE_SPIRAM_16M"
+          ls $TARGET/build-MICROLITE_SPIRAM_16M
+        shell: bash
+
+      - name: Archive ESP32-MICROLITE_SPIRAM_16M firmware
+        uses: actions/upload-artifact@v4
+        with:
+          name: microlite-esp32-firmware
+          path: /home/runner/work/tensorflow-micropython-examples/dependencies/micropython/ports/esp32/build-MICROLITE_SPIRAM_16M/firmware.bin
+
+      - name: Build with psram support and 16MB Flash firmware
+        run: |
+          source ./dependencies/micropython/tools/ci.sh && ci_esp32_idf50_setup
+          echo "BUILDING MICROLITE_SPIRAM_CAM"
+          source ./scripts/build.sh && build_esp32 "MICROLITE_SPIRAM_CAM"
+          TARGET=$(pwd)/dependencies/micropython/ports/esp32
+          echo "TARGET=$TARGET"
+          ./scripts/assemble-unified-image-esp.sh $TARGET "MICROLITE_SPIRAM_CAM"
+          ls $TARGET/build-MICROLITE_SPIRAM_CAM
+        shell: bash
+
+      - name: Archive ESP32-MICROLITE_SPIRAM_CAM firmware
+        uses: actions/upload-artifact@v4
+        with:
+          name: microlite-esp32-firmware
+          path: /home/runner/work/tensorflow-micropython-examples/dependencies/micropython/ports/esp32/build-MICROLITE_SPIRAM_CAM/firmware.bin
