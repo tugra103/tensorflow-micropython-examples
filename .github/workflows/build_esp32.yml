@@ -19,17 +19,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-#  MICROLITE /
-#  MICROLITE_C3
-#  MICROLITE_S2_SPIRAM
-#  MICROLITE_S3
-#  MICROLITE_S3_SPIRAM
-#  MICROLITE_S3_SPIRAM_CS_GPIO_20
-#  MICROLITE_S3_SPIRAM_OCTAL
-#  MICROLITE_SPIRAM
-#  MICROLITE_SPIRAM_16M /
-#  MICROLITE_SPIRAM_CAM
-
       - name: Build ESP32-MICROLITE No SPIRAM - 4MB Flash
         run: |
           mv * ..
@@ -52,7 +41,7 @@ jobs:
 
       - name: Build MICROLITE_C3 firmware
         run: |
-          source ./dependencies/micropython/tools/ci.sh && ci_esp32_idf50_setup
+          cd ..
           echo "BUILDING MICROLITE_C3"
           source ./scripts/build.sh && build_esp32 "MICROLITE_C3"
           TARGET=$(pwd)/dependencies/micropython/ports/esp32
@@ -69,7 +58,7 @@ jobs:
 
       - name: Build MICROLITE_S2_SPIRAM firmware
         run: |
-          source ./dependencies/micropython/tools/ci.sh && ci_esp32_idf50_setup
+          cd ..
           echo "BUILDING MICROLITE_S2_SPIRAM"
           source ./scripts/build.sh && build_esp32 "MICROLITE_S2_SPIRAM"
           TARGET=$(pwd)/dependencies/micropython/ports/esp32
@@ -86,7 +75,7 @@ jobs:
 
       - name: Build MICROLITE_S3 firmware
         run: |
-          source ./dependencies/micropython/tools/ci.sh && ci_esp32_idf50_setup
+          cd ..
           echo "BUILDING MICROLITE_S3"
           source ./scripts/build.sh && build_esp32 "MICROLITE_S3"
           TARGET=$(pwd)/dependencies/micropython/ports/esp32
@@ -103,7 +92,7 @@ jobs:
 
       - name: Build MICROLITE_S3_SPIRAM firmware
         run: |
-          source ./dependencies/micropython/tools/ci.sh && ci_esp32_idf50_setup
+          cd ..
           echo "BUILDING MICROLITE_S3_SPIRAM"
           source ./scripts/build.sh && build_esp32 "MICROLITE_S3_SPIRAM"
           TARGET=$(pwd)/dependencies/micropython/ports/esp32
@@ -120,7 +109,7 @@ jobs:
 
       - name: Build MICROLITE_S3_SPIRAM_CS_GPIO_20 firmware
         run: |
-          source ./dependencies/micropython/tools/ci.sh && ci_esp32_idf50_setup
+          cd ..
           echo "BUILDING MICROLITE_S3_SPIRAM_CS_GPIO_20"
           source ./scripts/build.sh && build_esp32 "MICROLITE_S3_SPIRAM_CS_GPIO_20"
           TARGET=$(pwd)/dependencies/micropython/ports/esp32
@@ -138,7 +127,7 @@ jobs:
 
       - name: Build MICROLITE_S3_SPIRAM_OCTAL firmware
         run: |
-          source ./dependencies/micropython/tools/ci.sh && ci_esp32_idf50_setup
+          cd ..
           echo "BUILDING MICROLITE_S3_SPIRAM_OCTAL"
           source ./scripts/build.sh && build_esp32 "MICROLITE_S3_SPIRAM_OCTAL"
           TARGET=$(pwd)/dependencies/micropython/ports/esp32
@@ -156,7 +145,7 @@ jobs:
 
       - name: Build MICROLITE_SPIRAM firmware
         run: |
-          source ./dependencies/micropython/tools/ci.sh && ci_esp32_idf50_setup
+          cd ..
           echo "BUILDING MICROLITE_SPIRAM"
           source ./scripts/build.sh && build_esp32 "MICROLITE_SPIRAM"
           TARGET=$(pwd)/dependencies/micropython/ports/esp32
@@ -174,7 +163,7 @@ jobs:
 
       - name: Build with psram support and 16MB Flash firmware
         run: |
-          source ./dependencies/micropython/tools/ci.sh && ci_esp32_idf50_setup
+          cd ..
           echo "BUILDING MICROLITE_SPIRAM_16M"
           source ./scripts/build.sh && build_esp32 "MICROLITE_SPIRAM_16M"
           TARGET=$(pwd)/dependencies/micropython/ports/esp32
@@ -191,7 +180,7 @@ jobs:
 
       - name: Build with psram support and 16MB Flash firmware
         run: |
-          source ./dependencies/micropython/tools/ci.sh && ci_esp32_idf50_setup
+          cd ..
           echo "BUILDING MICROLITE_SPIRAM_CAM"
           source ./scripts/build.sh && build_esp32 "MICROLITE_SPIRAM_CAM"
           TARGET=$(pwd)/dependencies/micropython/ports/esp32
