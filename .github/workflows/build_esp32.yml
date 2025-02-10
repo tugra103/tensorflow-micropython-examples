@@ -1,12 +1,15 @@
 name: ESP32
 
 # https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#onschedule
+
 on:
+  push:
   pull_request:
-    paths:
-      - ".github/workflows/build_esp32.yml"
-      - "micropython-modules/microlite/**"
-      - "micropython-modules/micropython-camera-driver/**"
+    paths-ignore:
+      - "examples/**"
+      - "README.md"
+      - "ci/*unix*.sh"
+      - ".github/workflows/build_*.yml"
       
 
 jobs:
