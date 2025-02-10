@@ -53,7 +53,7 @@ jobs:
       - name: Archive ESP32-MICROLITE_C3 firmware
         uses: actions/upload-artifact@v4
         with:
-          name: microlite-esp32-firmware
+          name: microlite-esp32-c3-firmware
           path: /home/runner/work/tensorflow-micropython-examples/dependencies/micropython/ports/esp32/build-MICROLITE_C3/firmware.bin
 
       - name: Build MICROLITE_S2_SPIRAM firmware
@@ -70,7 +70,7 @@ jobs:
       - name: Archive ESP32-MICROLITE_S2_SPIRAM firmware
         uses: actions/upload-artifact@v4
         with:
-          name: microlite-esp32-firmware
+          name: microlite-esp32-s2-firmware
           path: /home/runner/work/tensorflow-micropython-examples/dependencies/micropython/ports/esp32/build-MICROLITE_S2_SPIRAM/firmware.bin
 
       - name: Build MICROLITE_S3 firmware
@@ -87,7 +87,7 @@ jobs:
       - name: Archive ESP32-MICROLITE_S3 firmware
         uses: actions/upload-artifact@v4
         with:
-          name: microlite-esp32-firmware
+          name: microlite-esp32-s3-firmware
           path: /home/runner/work/tensorflow-micropython-examples/dependencies/micropython/ports/esp32/build-MICROLITE_S3/firmware.bin
 
       - name: Build MICROLITE_S3_SPIRAM firmware
@@ -104,7 +104,7 @@ jobs:
       - name: Archive ESP32-MICROLITE_S3_SPIRAM firmware
         uses: actions/upload-artifact@v4
         with:
-          name: microlite-esp32-firmware
+          name: microlite-esp32-s3-spiram-firmware
           path: /home/runner/work/tensorflow-micropython-examples/dependencies/micropython/ports/esp32/build-MICROLITE_S3_SPIRAM/firmware.bin
 
       - name: Build MICROLITE_S3_SPIRAM_CS_GPIO_20 firmware
@@ -121,7 +121,7 @@ jobs:
       - name: Archive ESP32-MICROLITE_S3_SPIRAM_CS_GPIO_20 firmware
         uses: actions/upload-artifact@v4
         with:
-          name: microlite-esp32-firmware
+          name: microlite-esp32-s3-spiram-cs-gpio-20-firmware
           path: /home/runner/work/tensorflow-micropython-examples/dependencies/micropython/ports/esp32/build-MICROLITE_S3_SPIRAM_CS_GPIO_20/firmware.bin
 
 
@@ -139,7 +139,7 @@ jobs:
       - name: Archive ESP32-MICROLITE_S3_SPIRAM_OCTAL firmware
         uses: actions/upload-artifact@v4
         with:
-          name: microlite-esp32-firmware
+          name: microlite-esp32-s3-spiram-octal-firmware
           path: /home/runner/work/tensorflow-micropython-examples/dependencies/micropython/ports/esp32/build-MICROLITE_S3_SPIRAM_OCTAL/firmware.bin
 
 
@@ -157,7 +157,7 @@ jobs:
       - name: Archive ESP32-MICROLITE_SPIRAM firmware
         uses: actions/upload-artifact@v4
         with:
-          name: microlite-esp32-firmware
+          name: microlite-esp32-spiram-firmware
           path: /home/runner/work/tensorflow-micropython-examples/dependencies/micropython/ports/esp32/build-MICROLITE_SPIRAM/firmware.bin
 
 
@@ -175,7 +175,7 @@ jobs:
       - name: Archive ESP32-MICROLITE_SPIRAM_16M firmware
         uses: actions/upload-artifact@v4
         with:
-          name: microlite-esp32-firmware
+          name: microlite-esp32-spiram-16m-firmware
           path: /home/runner/work/tensorflow-micropython-examples/dependencies/micropython/ports/esp32/build-MICROLITE_SPIRAM_16M/firmware.bin
 
       - name: Build with psram support and 16MB Flash firmware
@@ -192,5 +192,5 @@ jobs:
       - name: Archive ESP32-MICROLITE_SPIRAM_CAM firmware
         uses: actions/upload-artifact@v4
         with:
-          name: microlite-esp32-firmware
+          name: microlite-esp32-spiram-cam-firmware
           path: /home/runner/work/tensorflow-micropython-examples/dependencies/micropython/ports/esp32/build-MICROLITE_SPIRAM_CAM/firmware.bin
