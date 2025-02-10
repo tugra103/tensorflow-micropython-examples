@@ -34,7 +34,7 @@ jobs:
         shell: bash
 
       - name: Archive ESP32-MICROLITE No SPIRAM - 4 MB Flash firmware
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: microlite-esp32-firmware
           path: /home/runner/work/tensorflow-micropython-examples/dependencies/micropython/ports/esp32/build-MICROLITE/firmware.bin
