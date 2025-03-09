@@ -26,7 +26,7 @@ jobs:
 
       - name: Prepare to Build Tensorflow Micropython Firmware for ESP32
         run: |
-          https://github.com/tugra103/tensorflow-micropython-examples.git
+          git clone https://github.com/tugra103/tensorflow-micropython-examples.git
           cd tensorflow-micropython-examples
           git submodule init
           git submodule update --recursive
