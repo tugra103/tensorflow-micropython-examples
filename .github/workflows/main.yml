@@ -65,13 +65,13 @@ jobs:
           echo "Regenerating microlite/tfm directory"
           rm -rf ./micropython-modules/microlite/tflm
 
-          cd /__w/tensorflow-micropython-examples/tensorflow-micropython-examples/tensorflow
+          cd /__w/tensorflow-micropython-examples/tensorflow-micropython-examples/tensorflow-micropython-examples/tensorflow
 
           ../micropython-modules/microlite/prepare-tflm-esp.sh
 
       - name: Build micropython cross compiler
         run: |
-          cd /__w/tensorflow-micropython-examples/tensorflow-micropython-examples
+          cd /__w/tensorflow-micropython-examples/tensorflow-micropython-examples/tensorflow-micropython-examples
           cd ./micropython
           echo "make -C mpy-cross V=1 clean all"
           make -C mpy-cross V=1 clean all
