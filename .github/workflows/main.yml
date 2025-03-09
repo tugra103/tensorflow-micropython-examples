@@ -19,7 +19,7 @@ jobs:
 
       - name: setup
         run: |
-          rm -rf /__e/node20/
+          
           apt update
           apt install git 
           apt-get remove nodejs
