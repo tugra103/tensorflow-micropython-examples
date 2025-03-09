@@ -16,6 +16,10 @@ jobs:
     container:
       image: espressif/idf:release-v4.3
     steps:
+      - uses: actions/setup-node@v4
+        with:
+            node-version: 18
+
       - name: setup
         run: |
           apt update
