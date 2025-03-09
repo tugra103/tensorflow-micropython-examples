@@ -81,9 +81,8 @@ jobs:
         run: |
           cd /__w/tensorflow-micropython-examples/tensorflow-micropython-examples/tensorflow-micropython-examples 
           ls
-           ./micropython/tools/ci.sh && ci_esp32_idf44_setup
-
-          . /__w/tensorflow-micropython-examples/tensorflow-micropython-examples/tensorflow-micropython-examples/esp-idf/export.sh
+          git clone -b v4.4 --recursive https://github.com/espressif/esp-idf.git esp-idf
+          . ./esp-idf/export.sh
 
           echo "cd /__w/tensorflow-micropython-examples/tensorflow-micropython-examples/tensorflow-micropython-examples/boards/esp32/MICROLITE_SPIRAM_CAM"
           cd /__w/tensorflow-micropython-examples/tensorflow-micropython-examples/tensorflow-micropython-examples/boards/esp32/MICROLITE_SPIRAM_CAM
