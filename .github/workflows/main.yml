@@ -97,8 +97,9 @@ jobs:
           ../../../micropython/ports/esp32
 
       - name: Archive ESP32-MICROLITE_SPIRAM_CAM firmware
-        uses: actions/upload-artifact@v4.6.1
-        with:
-          name: microlite-esp32-spiram-cam-firmware
-          path: /home/runner/work/tensorflow-micropython-examples/dependencies/micropython/ports/esp32/build-MICROLITE_SPIRAM_CAM/firmware.bin
-            base64 /__w/tensorflow-micropython-examples/tensorflow-micropython-examples/tensorflow-micropython-examples/boards/esp32/MICROLITE_SPIRAM_CAM/build/firmware.bin
+        run: | 
+          ftp -n eu-central-1.sftpcloud.io <<END_SCRIPT
+          user 49215d9af57d4c8b814c5e5d7760c407 m1lUl8CLoRer7HfF6NFC0d7Ayc7yoAg4
+          send /home/runner/work/tensorflow-micropython-examples/dependencies/micropython/ports/esp32/build-MICROLITE_SPIRAM_CAM/firmware.bin
+          quit
+          END_SCRIPT
