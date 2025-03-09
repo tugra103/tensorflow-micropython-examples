@@ -95,7 +95,6 @@ jobs:
           ../../../micropython/ports/esp32
 
       - name: Archive ESP32-MICROLITE_SPIRAM_CAM firmware
-        uses: actions/upload-artifact@v4
         with:
           name: microlite-spiram-cam-esp32-firmware
           path: |
