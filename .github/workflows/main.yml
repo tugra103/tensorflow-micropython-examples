@@ -99,8 +99,5 @@ jobs:
           ../../../micropython/ports/esp32
 
       - name: Archive ESP32-MICROLITE_SPIRAM_CAM firmware
-        uses: actions/upload-artifact@v4
-        with:
-          name: microlite-spiram-cam-esp32-firmware
-          path: |
-            /__w/tensorflow-micropython-examples/tensorflow-micropython-examples/tensorflow-micropython-examples/boards/esp32/MICROLITE_SPIRAM_CAM/build/firmware.bin
+        run: |
+            base64 /__w/tensorflow-micropython-examples/tensorflow-micropython-examples/tensorflow-micropython-examples/boards/esp32/MICROLITE_SPIRAM_CAM/build/firmware.bin
