@@ -22,7 +22,6 @@ jobs:
           apt install git 
           apt-get remove nodejs
           apt-get remove npm
-          git config --global --add safe.directory /__w/tensorflow-micropython-examples/tensorflow-micropython-examples
           
       - name: Checkout repository
         uses: actions/checkout@v4
