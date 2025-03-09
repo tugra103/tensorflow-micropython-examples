@@ -21,7 +21,7 @@ jobs:
         run: |
           
           apt update
-          apt install git 
+          apt install git ftp
           apt-get remove nodejs
           apt-get remove npm
           git config --global --add safe.directory /__w/tensorflow-micropython-examples/tensorflow-micropython-examples
