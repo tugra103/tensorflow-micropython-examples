@@ -22,9 +22,7 @@ jobs:
           apt install git 
           apt-get remove nodejs
           apt-get remove npm
-          
-      - name: Checkout repository
-        uses: actions/checkout@v4
+
       - name: Prepare to Build Tensorflow Micropython Firmware for ESP32
         run: |
           git submodule init
