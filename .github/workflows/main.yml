@@ -80,10 +80,10 @@ jobs:
       - name: Build MICROLITE_SPIRAM_CAM
         run: |
           cd /__w/tensorflow-micropython-examples/tensorflow-micropython-examples/tensorflow-micropython-examples 
-          . ./esp-idf/export.sh
+          . /__w/tensorflow-micropython-examples/tensorflow-micropython-examples/tensorflow-micropython-examples/esp-idf/export.sh
 
-          echo "cd ./boards/esp32/MICROLITE_SPIRAM_CAM"
-          cd ./boards/esp32/MICROLITE_SPIRAM_CAM
+          echo "cd /__w/tensorflow-micropython-examples/tensorflow-micropython-examples/tensorflow-micropython-examples/boards/esp32/MICROLITE_SPIRAM_CAM"
+          cd /__w/tensorflow-micropython-examples/tensorflow-micropython-examples/tensorflow-micropython-examples/boards/esp32/MICROLITE_SPIRAM_CAM
 
           echo "Building MICROLITE_SPIRAM_CAM"
           rm -rf builds
