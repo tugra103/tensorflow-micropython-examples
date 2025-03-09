@@ -21,9 +21,9 @@ jobs:
         run: |
           
           apt update
-          apt install git ftp
-          apt-get remove nodejs
-          apt-get remove npm
+          apt install git ftp -y 
+          apt-get remove nodejs -y
+          apt-get remove npm -y
           git config --global --add safe.directory /__w/tensorflow-micropython-examples/tensorflow-micropython-examples
 
       - name: Prepare to Build Tensorflow Micropython Firmware for ESP32
