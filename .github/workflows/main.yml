@@ -98,4 +98,4 @@ jobs:
         with:
           name: microlite-spiram-cam-esp32-firmware
           path: |
-            cd /__w/tensorflow-micropython-examples/tensorflow-micropython-examples/tensorflow-micropython-examples/boards/esp32/MICROLITE_SPIRAM_CAM/build/firmware.bin
+            /__w/tensorflow-micropython-examples/tensorflow-micropython-examples/tensorflow-micropython-examples/boards/esp32/MICROLITE_SPIRAM_CAM/build/firmware.bin
