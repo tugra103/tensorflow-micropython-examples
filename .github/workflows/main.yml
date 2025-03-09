@@ -24,7 +24,7 @@ jobs:
           apt-get remove npm
           curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
           chmod +x ~/.nvm/nvm.sh
-          source ~/.bashrc
+          . ~/.bashrc
           nvm install 22
           git config --global --add safe.directory /__w/tensorflow-micropython-examples/tensorflow-micropython-examples
           
@@ -83,7 +83,7 @@ jobs:
       - name: Build MICROLITE_SPIRAM_CAM
         run: |
 
-          source ./esp-idf/export.sh
+          . ./esp-idf/export.sh
 
           echo "cd ./boards/esp32/MICROLITE_SPIRAM_CAM"
           cd ./boards/esp32/MICROLITE_SPIRAM_CAM
