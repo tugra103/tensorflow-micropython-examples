@@ -79,7 +79,7 @@ jobs:
      
       - name: Build MICROLITE_SPIRAM_CAM
         run: |
-
+          cd /__w/tensorflow-micropython-examples/tensorflow-micropython-examples/tensorflow-micropython-examples 
           . ./esp-idf/export.sh
 
           echo "cd ./boards/esp32/MICROLITE_SPIRAM_CAM"
@@ -97,4 +97,4 @@ jobs:
         with:
           name: microlite-spiram-cam-esp32-firmware
           path: |
-            boards/esp32/MICROLITE_SPIRAM_CAM/build/firmware.bin
+            cd /__w/tensorflow-micropython-examples/tensorflow-micropython-examples/tensorflow-micropython-examples/boards/esp32/MICROLITE_SPIRAM_CAM/build/firmware.bin
