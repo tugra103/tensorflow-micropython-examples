@@ -23,7 +23,7 @@ jobs:
           git config --global --add safe.directory /__w/tensorflow-micropython-examples/tensorflow-micropython-examples
           
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Prepare to Build Tensorflow Micropython Firmware for ESP32
         run: |
           git submodule init
